@@ -122,7 +122,7 @@ export default function Services() {
           </h3>
           <p className="text-center text-ecru/40 text-xs mb-6">Sunday Service Order</p>
           <div className="space-y-3">
-            {schedule.map((item, _i) => (
+            {schedule.map((item) => (
               <div
                 key={item.time}
                 className="flex items-center justify-between px-3 py-2 rounded-lg bg-gold/5 border border-gold/5"
