@@ -9,7 +9,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Address",
-    value: "Sarada Colony 32 Lane, ReddyPalem Road",
+    value: "Sarada Colony, 32 Lane, ReddyPalem Road",
     value2: "Guntur, Andhra Pradesh - 522002",
   },
   {
@@ -37,7 +37,6 @@ const socialLinks = [
   {
     name: "YouTube",
     url: "https://www.youtube.com/@shekinahministriesguntur6932",
-    color: "hover:text-red-400",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -47,7 +46,6 @@ const socialLinks = [
   {
     name: "Instagram",
     url: "https://instagram.com/pastor_vijay_kumar_shekinah",
-    color: "hover:text-pink-400",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
@@ -57,7 +55,6 @@ const socialLinks = [
   {
     name: "Facebook",
     url: "https://facebook.com/ShekinahMinistriesGuntur",
-    color: "hover:text-blue-400",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -67,7 +64,6 @@ const socialLinks = [
   {
     name: "YouTube Music",
     url: "https://music.youtube.com/channel/UCKVK4i7Wj-d0z1-3OSsSEgQ",
-    color: "hover:text-green-400",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
@@ -76,10 +72,17 @@ const socialLinks = [
   },
 ];
 
+const serviceTimes = [
+  { day: "Sunday Morning", time: "6:00 AM — 7:00 AM" },
+  { day: "Sunday Main Service", time: "8:00 AM — 10:00 AM" },
+  { day: "Sunday Evening", time: "7:00 PM — 8:30 PM" },
+  { day: "Wednesday Prayer", time: "6:00 PM — 7:30 PM" },
+];
+
 export default function Contact() {
   return (
     <section id="contact" className="relative py-32 px-4">
-      <div className="absolute inset-0 bg-gradient-to-b from-ink to-ink-light/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink-light/10 to-ink pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -89,13 +92,15 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-block text-gold text-sm tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-3 text-gold text-sm tracking-widest uppercase mb-4">
+            <span className="w-8 h-px bg-gold/40" />
             Contact Us
-          </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-parchment mb-4">
-            Get in Touch
+            <span className="w-8 h-px bg-gold/40" />
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-parchment mb-4 leading-tight">
+            Get in Touch<br />With Us
           </h2>
-          <div className="w-12 h-px bg-gold/50 mx-auto mt-6" />
+          <div className="w-12 h-px bg-gold/40 mx-auto mt-6" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -110,39 +115,30 @@ export default function Contact() {
               {contactInfo.map((info) => (
                 <div
                   key={info.label}
-                  className="flex items-start gap-4 p-5 rounded-xl border border-gold/10 bg-ink-light/30"
+                  className="flex items-start gap-4 p-5 rounded-xl border border-gold/10 bg-ink-light/30 hover:bg-ink-light/40 transition-colors"
                 >
                   <div className="w-11 h-11 rounded-lg bg-gold/[0.08] flex items-center justify-center text-gold shrink-0">
                     {info.icon}
                   </div>
                   <div>
-                    <p className="text-xs text-taupe mb-0.5 uppercase tracking-wider">{info.label}</p>
+                    <p className="text-[10px] text-taupe mb-0.5 uppercase tracking-widest">{info.label}</p>
                     <p className="text-parchment font-medium">{info.value}</p>
-                    {info.value2 && <p className="text-parchment/60 text-sm">{info.value2}</p>}
+                    {info.value2 && <p className="text-taupe text-sm mt-0.5">{info.value2}</p>}
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="p-6 rounded-xl border border-gold/10 bg-ink-light/30">
-              <h3 className="text-parchment font-semibold mb-4">Service Times</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between items-center py-2 border-b border-gold/5">
-                  <span className="text-parchment/70">Sunday Morning</span>
-                  <span className="text-gold font-medium">6:00 - 7:00 AM</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gold/5">
-                  <span className="text-parchment/70">Sunday Main Service</span>
-                  <span className="text-gold font-medium">8:00 - 10:00 AM</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gold/5">
-                  <span className="text-parchment/70">Sunday Evening</span>
-                  <span className="text-gold font-medium">7:00 - 8:30 PM</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-parchment/70">Wednesday Prayer</span>
-                  <span className="text-gold font-medium">6:00 - 7:30 PM</span>
-                </div>
+              <p className="text-gold/60 text-xs uppercase tracking-widest mb-1">Service Times</p>
+              <p className="text-parchment font-semibold mb-4">Weekly Schedule</p>
+              <div className="space-y-2">
+                {serviceTimes.map((s) => (
+                  <div key={s.day} className="flex justify-between items-center py-2 border-b border-gold/5 last:border-0">
+                    <span className="text-parchment/70 text-sm">{s.day}</span>
+                    <span className="text-gold/80 text-sm font-mono font-medium">{s.time}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -153,15 +149,16 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="p-8 rounded-2xl border border-gold/10 bg-ink-light/40 backdrop-blur-sm">
-              <h3 className="text-parchment font-serif text-xl font-semibold mb-6">
-                Connect With Us
-              </h3>
+            <div className="p-8 rounded-2xl border border-gold/10 bg-ink-light/40 backdrop-blur-sm h-full flex flex-col">
+              <div className="mb-6">
+                <p className="text-gold/60 text-xs uppercase tracking-widest mb-1">Connect</p>
+                <h3 className="text-parchment font-serif text-xl font-semibold">Follow Our Journey</h3>
+              </div>
               <p className="text-taupe text-sm mb-8 leading-relaxed">
-                Follow Shekinah Ministries on social media and stay connected with our worship services, events, and daily devotionals.
+                Stay connected with Shekinah Ministries through our social channels. Watch our services, listen to sermons, and be part of our growing community.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-3 mb-8">
                 {socialLinks.map((link) => (
                   <motion.a
                     key={link.name}
@@ -169,9 +166,9 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.03 }}
-                    className={`flex items-center gap-3 p-4 rounded-xl border border-gold/10 bg-ink-light/30 ${link.color} transition-all duration-300 hover:border-gold/30`}
+                    className="flex items-center gap-3 p-4 rounded-xl border border-gold/10 bg-ink-light/30 hover:border-gold/25 hover:bg-gold/[0.03] transition-all duration-300"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-gold/[0.08] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-gold/[0.08] flex items-center justify-center shrink-0 text-gold">
                       {link.icon}
                     </div>
                     <span className="text-parchment/80 text-sm font-medium">{link.name}</span>
@@ -179,9 +176,12 @@ export default function Contact() {
                 ))}
               </div>
 
-              <p className="text-taupe text-xs text-center">
-                "For where two or three gather in my name, there am I with them." — Matthew 18:20
-              </p>
+              <div className="mt-auto pt-6 border-t border-gold/10">
+                <p className="text-taupe/60 text-xs text-center italic leading-relaxed">
+                  "For where two or three gather in my name, there am I with them."
+                </p>
+                <p className="text-taupe/40 text-[10px] text-center mt-1">— Matthew 18:20</p>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -5,13 +5,17 @@
   --font-serif: "Playfair Display", serif;
   --color-gold: #c9a96e;
   --color-gold-light: #dfc08a;
-  --color-gold-dark: #ad8a4e;
-  --color-ink: #0a0a0a;
-  --color-ink-light: #141414;
-  --color-parchment: #f5f0eb;
-  --color-parchment-dark: #e0d8cf;
-  --color-taupe: #8a8070;
-  --color-taupe-dark: #5a5248;
+  --color-gold-dark: #a8884a;
+  --color-ink: #1a1410;
+  --color-ink-light: #2a2018;
+  --color-ink-lighter: #3a2e24;
+  --color-parchment: #f5e6d3;
+  --color-parchment-dark: #e0d0b8;
+  --color-burgundy: #6b0f1a;
+  --color-burgundy-light: #8b1a2a;
+  --color-taupe: #9a8a78;
+  --color-taupe-dark: #6a5a4a;
+  --color-cream: #faf3e8;
 }
 
 * {
@@ -47,8 +51,22 @@ canvas {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
+}
+
+.scroll-indicator {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.3), transparent);
 }

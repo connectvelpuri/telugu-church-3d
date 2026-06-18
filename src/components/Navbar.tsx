@@ -26,8 +26,8 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-ink/90 backdrop-blur-xl shadow-lg shadow-black/30 border-b border-gold/5"
-          : "bg-transparent"
+          ? "bg-ink/90 backdrop-blur-xl shadow-lg shadow-black/40 border-b border-gold/10"
+          : "bg-gradient-to-b from-ink/60 to-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,15 +37,15 @@ export default function Navbar() {
             className="flex items-center gap-3 group"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center shadow-lg shadow-gold/10">
-              <svg viewBox="0 0 32 32" className="w-6 h-6 text-ink" fill="currentColor">
-                <path d="M16 2L16 30M16 8L28 8M16 16L28 16M16 24L28 24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"/>
-                <path d="M16 8L4 8M16 16L4 16M16 24L4 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5"/>
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center shadow-lg shadow-gold/15">
+              <svg viewBox="0 0 28 28" className="w-6 h-6 text-ink" fill="currentColor">
+                <rect x="12" y="2" width="4" height="24" rx="1" />
+                <rect x="6" y="12" width="16" height="4" rx="1" />
               </svg>
             </div>
             <div>
-              <span className="text-gold font-serif font-bold text-lg tracking-wide block leading-tight">Shekinah</span>
-              <span className="text-taupe text-xs tracking-widest uppercase block">Ministries</span>
+              <span className="text-gold font-serif font-bold text-xl tracking-wide block leading-tight">Shekinah</span>
+              <span className="text-taupe text-[10px] tracking-[0.2em] uppercase block">Ministries · Guntur</span>
             </div>
           </motion.a>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i + 0.3 }}
-                className="relative px-4 py-2 text-sm text-parchment/70 hover:text-gold transition-colors duration-300 group"
+                className="relative px-4 py-2 text-sm text-parchment/60 hover:text-gold transition-colors duration-300 group"
               >
                 <span>{link.label}</span>
                 <span className="absolute bottom-0 left-4 right-4 h-px bg-gold/50 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -68,7 +68,7 @@ export default function Navbar() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 }}
-              className="ml-4 px-5 py-2.5 bg-gradient-to-r from-gold to-gold-dark text-ink font-semibold text-sm rounded-lg hover:from-gold-light hover:to-gold transition-all duration-300 shadow-lg shadow-gold/10"
+              className="ml-4 px-5 py-2.5 bg-gradient-to-r from-gold to-gold-dark text-ink font-semibold text-sm rounded-lg hover:from-gold-light hover:to-gold transition-all duration-300 shadow-lg shadow-gold/15"
             >
               Join Us
             </motion.a>
@@ -111,7 +111,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   whileTap={{ scale: 0.98 }}
-                  className="block px-4 py-3 rounded-lg hover:bg-gold/5 text-parchment/80 hover:text-gold transition-colors"
+                  className="block px-4 py-3 rounded-lg hover:bg-gold/5 text-parchment/70 hover:text-gold transition-colors"
                 >
                   <span className="text-sm font-medium">{link.label}</span>
                 </motion.a>

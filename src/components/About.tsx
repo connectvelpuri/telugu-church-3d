@@ -8,7 +8,8 @@ const values = [
       </svg>
     ),
     title: "Faith",
-    desc: "Rooted in the unshakable foundation of God's Word.",
+    verse: "Hebrews 11:1",
+    desc: "Rooted in the unshakable foundation of God's Word, we stand firm in our faith.",
   },
   {
     icon: (
@@ -20,7 +21,8 @@ const values = [
       </svg>
     ),
     title: "Community",
-    desc: "A loving family united in Christ across all generations.",
+    verse: "Acts 2:44-47",
+    desc: "A loving family united in Christ, where every generation finds belonging.",
   },
   {
     icon: (
@@ -29,7 +31,8 @@ const values = [
       </svg>
     ),
     title: "Service",
-    desc: "Serving our community with the love and compassion of Jesus.",
+    verse: "Mark 10:45",
+    desc: "Following Christ's example of humble service to our community and world.",
   },
   {
     icon: (
@@ -41,14 +44,15 @@ const values = [
       </svg>
     ),
     title: "Light",
-    desc: "Shining the light of Christ in our city and beyond.",
+    verse: "Matthew 5:14-16",
+    desc: "Called to shine the light of Christ, bringing hope to our city and beyond.",
   },
 ];
 
 export default function About() {
   return (
     <section id="about" className="relative py-32 px-4">
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/60 to-ink pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/50 to-ink pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -58,16 +62,18 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-block text-gold text-sm tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-3 text-gold text-sm tracking-widest uppercase mb-4">
+            <span className="w-8 h-px bg-gold/40" />
             About Us
-          </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-parchment mb-4">
-            A Dwelling Place for His Glory
+            <span className="w-8 h-px bg-gold/40" />
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-parchment mb-4 leading-tight">
+            A Dwelling Place<br />for His Glory
           </h2>
-          <div className="w-12 h-px bg-gold/50 mx-auto mt-6" />
+          <div className="w-12 h-px bg-gold/40 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,13 +82,13 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-parchment/80 leading-relaxed text-base sm:text-lg">
-              <span className="text-gold font-semibold">Shekinah Ministries</span> was founded on December 12, 2012, by Pastor G. Vijay Kumar in Guntur, Andhra Pradesh. The word <span className="italic text-parchment/90">Shekinah</span> refers to the manifest glory of God — His divine presence dwelling among His people.
+              <span className="text-gold font-semibold">Shekinah Ministries</span> was founded on <span className="text-parchment/90">December 12, 2012</span>, by Pastor G. Vijay Kumar in Guntur, Andhra Pradesh. The word <span className="italic text-parchment/90">Shekinah</span> refers to the manifest glory of God — His divine presence dwelling among His people.
             </p>
             <p className="text-taupe leading-relaxed">
-              From humble beginnings, what started as a small gathering has grown into a vibrant community of believers who are passionate about worship, the Word, and winning souls for the Kingdom of God.
+              From humble beginnings as a small gathering, God has grown this ministry into a vibrant community of believers passionate about worship, the Word, and winning souls for the Kingdom. Our doors are open to all who seek the living God.
             </p>
             <p className="text-taupe leading-relaxed">
-              Our mission is to make disciples of all nations, baptizing them in the name of the Father, Son, and Holy Spirit, and teaching them to observe all that Christ has commanded. We are committed to raising leaders, strengthening families, and transforming our city through the power of the Gospel.
+              Our mission is to make disciples of all nations, baptizing them in the name of the Father, Son, and Holy Spirit. We are committed to raising leaders, strengthening families, and transforming Guntur through the power of the Gospel.
             </p>
           </motion.div>
 
@@ -91,33 +97,45 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="space-y-6"
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-gold/10 bg-gradient-to-br from-gold/[0.03] to-ink-light/50 relative">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-full border border-gold/20 flex items-center justify-center">
-                    <svg className="w-12 h-12 text-gold/40" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M16 2L16 30M16 8L28 8M16 16L28 16M16 24L28 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                      <path d="M16 8L4 8M16 16L4 16M16 24L4 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+                  <div className="w-28 h-28 mx-auto mb-6 rounded-full border border-gold/15 flex items-center justify-center">
+                    <svg className="w-14 h-14 text-gold/30" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="12" y="2" width="4" height="24" rx="1" />
+                      <rect x="6" y="12" width="16" height="4" rx="1" />
                     </svg>
                   </div>
                   <p className="text-gold/40 text-sm italic">Since 2012</p>
+                  <p className="text-taupe-dark/50 text-xs mt-1">Sarada Colony, Guntur</p>
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-ink/80 to-transparent" />
             </div>
 
-            <div className="mt-6 p-6 rounded-xl border border-gold/10 bg-ink-light/40">
-              <p className="text-gold font-serif text-lg font-semibold mb-2">Pastor G. Vijay Kumar</p>
+            <div className="p-6 rounded-xl border border-gold/10 bg-ink-light/40">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gold font-serif text-lg font-semibold">Pastor G. Vijay Kumar</p>
+                  <p className="text-taupe text-xs">Founder & Senior Pastor</p>
+                </div>
+              </div>
               <p className="text-taupe text-sm leading-relaxed">
-                A man of prayer and faith, Pastor Vijay Kumar has dedicated his life to sharing the Gospel and building a church that reflects the glory of God. His vision is to see Guntur transformed by the love of Jesus Christ.
+                A man of prayer and faith, Pastor Vijay Kumar has dedicated his life to sharing the Gospel. His vision is to see Guntur transformed by the love of Jesus Christ — one soul at a time.
               </p>
             </div>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {values.map((v, i) => (
             <motion.div
               key={v.title}
@@ -126,12 +144,13 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group relative p-6 rounded-xl border border-gold/10 bg-ink-light/30 hover:bg-gold/[0.03] transition-all duration-500"
+              className="group relative p-6 rounded-xl border border-gold/10 bg-ink-light/30 hover:bg-gold/[0.02] hover:border-gold/20 transition-all duration-500"
             >
               <div className="text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
                 {v.icon}
               </div>
-              <h3 className="text-parchment font-semibold text-sm mb-2">{v.title}</h3>
+              <h3 className="text-parchment font-semibold text-sm mb-1">{v.title}</h3>
+              <p className="text-gold/50 text-[10px] uppercase tracking-wider mb-3">{v.verse}</p>
               <p className="text-taupe text-xs leading-relaxed">{v.desc}</p>
             </motion.div>
           ))}
