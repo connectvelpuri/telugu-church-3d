@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Stars,
@@ -88,7 +88,8 @@ function LightRays() {
   useFrame(({ clock }) => {
     if (pointsRef.current) {
       pointsRef.current.rotation.y += 0.0005;
-      pointsRef.current.material.opacity = 0.3 + Math.sin(clock.getElapsedTime() * 0.5) * 0.15;
+      const mat = pointsRef.current.material as THREE.PointsMaterial;
+      mat.opacity = 0.3 + Math.sin(clock.getElapsedTime() * 0.5) * 0.15;
     }
   });
 
@@ -96,12 +97,14 @@ function LightRays() {
     <points ref={pointsRef}>
       <bufferGeometry>
         <bufferAttribute
+          args={[positions.pos, 3]}
           attach="attributes-position"
           count={count}
           array={positions.pos}
           itemSize={3}
         />
         <bufferAttribute
+          args={[positions.colors, 3]}
           attach="attributes-color"
           count={count}
           array={positions.colors}
@@ -123,7 +126,7 @@ function LightRays() {
 function Pews() {
   const rows = 6;
   const seatsPerRow = 5;
-  const pews: JSX.Element[] = [];
+  const pews: React.ReactNode[] = [];
 
   for (let r = 0; r < rows; r++) {
     for (let s = 0; s < seatsPerRow; s++) {
