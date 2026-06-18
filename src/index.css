@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-telugu: "Noto Sans Telugu", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --color-gold: #d4a853;
+  --color-gold-light: #e4c07e;
+  --color-gold-dark: #b8913a;
+  --color-ecru: #f5ecd7;
+  --color-ecru-dark: #e8dcc4;
+  --color-navy: #0f0f23;
+  --color-navy-light: #1a1a3e;
+  --color-cream: #fdf8f0;
+  --color-warm: #2d1f0e;
+  --color-incense: #c4a882;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-telugu);
+  background: var(--color-navy);
+  color: var(--color-ecru);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+canvas {
+  display: block;
+}
