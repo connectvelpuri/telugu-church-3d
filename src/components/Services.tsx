@@ -2,70 +2,49 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    day: "ఆదివారం",
-    en: "Sunday",
-    time: "ఉదయం 8:00 - 10:00",
-    timeEn: "8:00 AM - 10:00 AM",
-    title: "ప్రధాన ఆరాధన",
-    subtitle: "Main Worship",
-    desc: "ప్రతి ఆదివారం మేము కలిసి దేవుని ఆరాధన చేస్తాము. స్తుతి, వాక్కు బోధ, ప్రార్థనతో కూడిన ఆరాధన సమయం.",
-    descEn: "Every Sunday we gather for worship with praise, sermon, and prayer.",
-    color: "from-gold/20 to-gold/5",
+    day: "Sunday",
+    time: "6:00 - 7:00 AM",
+    title: "Morning Worship",
+    desc: "Early morning Sunday service starting the day in God's presence with prayer and worship.",
+    color: "from-gold/[0.08] to-transparent",
+    border: "border-gold/15",
+  },
+  {
+    day: "Sunday",
+    time: "8:00 - 10:00 AM",
+    title: "Main Worship Service",
+    desc: "Our main weekly gathering with praise, worship, powerful Word ministry, and fellowship.",
+    color: "from-gold/[0.12] to-transparent",
     border: "border-gold/20",
-    icon: "✝",
   },
   {
-    day: "బుధవారం",
-    en: "Wednesday",
-    time: "సాయంత్రం 6:00 - 7:30",
-    timeEn: "6:00 PM - 7:30 PM",
-    title: "ప్రార్థన సభ",
-    subtitle: "Prayer Meeting",
-    desc: "వారం మధ్యలో మేము కలిసి ప్రార్థన చేస్తాము. మా అవసరాలను దేవుని సముఖంలో పెట్టడానికి ఈ సమయం.",
-    descEn: "Mid-week prayer meeting to bring our needs before God.",
-    color: "from-blue-500/10 to-blue-500/5",
-    border: "border-blue-500/20",
-    icon: "🕊",
+    day: "Sunday",
+    time: "7:00 - 8:30 PM",
+    title: "Evening Service",
+    desc: "Sunday evening service for the community — a time of worship, prayer, and the Word.",
+    color: "from-amber-500/[0.06] to-transparent",
+    border: "border-amber-500/15",
   },
   {
-    day: "శనివారం",
-    en: "Saturday",
-    time: "ఉదయం 9:00 - 10:30",
-    timeEn: "9:00 AM - 10:30 AM",
-    title: "యువత సమావేశం",
-    subtitle: "Youth Meeting",
-    desc: "యువత కోసం ప్రత్యేక సమావేశం. లోతైన వాక్కు అధ్యయనం, చర్చ, స్నేహం.",
-    descEn: "Special youth gathering with in-depth Bible study and fellowship.",
-    color: "from-emerald-500/10 to-emerald-500/5",
-    border: "border-emerald-500/20",
-    icon: "🔥",
-  },
-  {
-    day: "శుక్రవారం",
-    en: "Friday",
-    time: "సాయంత్రం 6:00 - 7:30",
-    timeEn: "6:00 PM - 7:30 PM",
-    title: "బైబిల్ అధ్యయనం",
-    subtitle: "Bible Study",
-    desc: "లోతైన బైబిల్ అధ్యయనం ద్వారా దేవుని వాక్కును అర్థం చేసుకోవడం.",
-    descEn: "Deep Bible study to understand God's word better.",
-    color: "from-purple-500/10 to-purple-500/5",
-    border: "border-purple-500/20",
-    icon: "📖",
+    day: "Wednesday",
+    time: "6:00 - 7:30 PM",
+    title: "Prayer Meeting",
+    desc: "Mid-week prayer gathering. We come together to intercede for our families, city, and nation.",
+    color: "from-blue-500/[0.05] to-transparent",
+    border: "border-blue-500/15",
   },
 ];
 
 const schedule = [
-  { time: "8:00 - 8:30", te: "స్తుతి ఆరాధన", en: "Praise & Worship" },
-  { time: "8:30 - 9:00", te: "ప్రార్థన", en: "Prayer" },
-  { time: "9:00 - 9:45", te: "వాక్కు బోధ", en: "Sermon" },
-  { time: "9:45 - 10:00", te: "దానాలు & ఆశీర్వచన", en: "Offering & Benediction" },
+  { time: "6:00 AM", label: "Morning Worship" },
+  { time: "8:00 AM", label: "Main Worship Service" },
+  { time: "7:00 PM", label: "Evening Service" },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 px-4">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy-light/30 to-navy/80 pointer-events-none" />
+    <section id="services" className="relative py-32 px-4">
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink-light/20 to-ink/60 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -73,39 +52,37 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <span className="inline-block text-gold text-sm tracking-widest uppercase mb-4">
-            మా సేవలు · Our Services
+            Worship Times
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-ecru mb-4">
-            ఆరాధన సమయాలు
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-parchment mb-4">
+            Come Worship With Us
           </h2>
-          <p className="text-lg text-ecru/40 font-light">Worship Times</p>
-          <div className="w-16 h-0.5 bg-gold/50 mx-auto mt-6" />
+          <div className="w-12 h-px bg-gold/50 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
           {services.map((s, i) => (
             <motion.div
-              key={s.day}
+              key={`${s.day}-${s.time}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -8 }}
-              className={`group relative p-6 rounded-xl border ${s.border} bg-gradient-to-br ${s.color} backdrop-blur-sm overflow-hidden`}
+              whileHover={{ y: -4 }}
+              className={`group relative p-8 rounded-2xl border ${s.border} bg-gradient-to-br ${s.color} backdrop-blur-sm overflow-hidden`}
             >
-              <div className="absolute top-0 right-0 text-6xl opacity-5 select-none pointer-events-none">
-                {s.icon}
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-xs text-gold/60 uppercase tracking-widest mb-1">{s.day}</div>
+                  <div className="text-lg text-gold font-serif">{s.time}</div>
+                </div>
+                <span className="text-2xl opacity-10 select-none pointer-events-none font-serif">†</span>
               </div>
-              <div className="text-xs text-gold/60 uppercase tracking-widest mb-1">{s.day}</div>
-              <div className="text-[10px] text-ecru/30 mb-3">{s.en}</div>
-              <div className="text-sm text-ecru/50 font-light mb-1">{s.time}</div>
-              <div className="text-[10px] text-ecru/20 mb-4">{s.timeEn}</div>
-              <h3 className="text-lg text-ecru font-semibold mb-1">{s.title}</h3>
-              <p className="text-xs text-gold/50 mb-2">{s.subtitle}</p>
-              <p className="text-sm text-ecru/60 leading-relaxed">{s.desc}</p>
+              <h3 className="text-xl text-parchment font-semibold mb-2">{s.title}</h3>
+              <p className="text-taupe text-sm leading-relaxed max-w-md">{s.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -115,25 +92,24 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-lg mx-auto p-6 rounded-xl border border-gold/10 bg-navy-light/40 backdrop-blur-sm"
+          className="max-w-xl mx-auto"
         >
-          <h3 className="text-center text-ecru font-semibold mb-4">
-            ఆదివారం ఆరాధన విధానం
-          </h3>
-          <p className="text-center text-ecru/40 text-xs mb-6">Sunday Service Order</p>
-          <div className="space-y-3">
-            {schedule.map((item) => (
-              <div
-                key={item.time}
-                className="flex items-center justify-between px-3 py-2 rounded-lg bg-gold/5 border border-gold/5"
-              >
-                <div>
-                  <span className="text-ecru/70 text-sm">{item.te}</span>
-                  <span className="text-ecru/30 text-xs block">{item.en}</span>
+          <div className="p-8 rounded-2xl border border-gold/10 bg-ink-light/40 backdrop-blur-sm">
+            <h3 className="text-center text-parchment font-serif text-xl font-semibold mb-2">
+              Sunday Service Schedule
+            </h3>
+            <p className="text-center text-taupe text-xs mb-8">Join us this Sunday</p>
+            <div className="space-y-4">
+              {schedule.map((item) => (
+                <div
+                  key={item.time}
+                  className="flex items-center justify-between px-5 py-3 rounded-xl bg-gold/[0.03] border border-gold/5"
+                >
+                  <span className="text-parchment/80 text-sm font-medium">{item.label}</span>
+                  <span className="text-gold text-sm font-mono font-semibold">{item.time}</span>
                 </div>
-                <span className="text-gold/60 text-sm font-mono">{item.time}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

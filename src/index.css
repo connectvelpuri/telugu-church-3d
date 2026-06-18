@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-telugu: "Noto Sans Telugu", sans-serif;
-  --font-display: "Playfair Display", serif;
-  --color-gold: #d4a853;
-  --color-gold-light: #e4c07e;
-  --color-gold-dark: #b8913a;
-  --color-ecru: #f5ecd7;
-  --color-ecru-dark: #e8dcc4;
-  --color-navy: #0f0f23;
-  --color-navy-light: #1a1a3e;
-  --color-cream: #fdf8f0;
-  --color-warm: #2d1f0e;
-  --color-incense: #c4a882;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --color-gold: #c9a96e;
+  --color-gold-light: #dfc08a;
+  --color-gold-dark: #ad8a4e;
+  --color-ink: #0a0a0a;
+  --color-ink-light: #141414;
+  --color-parchment: #f5f0eb;
+  --color-parchment-dark: #e0d8cf;
+  --color-taupe: #8a8070;
+  --color-taupe-dark: #5a5248;
 }
 
 * {
@@ -26,17 +25,30 @@ html {
 }
 
 body {
-  font-family: var(--font-telugu);
-  background: var(--color-navy);
-  color: var(--color-ecru);
+  font-family: var(--font-sans);
+  background: var(--color-ink);
+  color: var(--color-parchment);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
   background: var(--color-gold);
-  color: var(--color-navy);
+  color: var(--color-ink);
 }
 
 canvas {
   display: block;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }

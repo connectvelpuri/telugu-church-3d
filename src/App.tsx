@@ -12,24 +12,24 @@ const ChurchScene = lazy(() => import("./components/ChurchScene"));
 
 function App() {
   const { scrollYProgress } = useScroll();
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = document.querySelector('title');
-    if (el) el.textContent = "సీయోను సంఘం | Zion Church";
+    if (el) el.textContent = "Shekinah Ministries | Guntur";
   }, []);
 
   return (
-    <div ref={mainRef} className="relative min-h-screen bg-navy overflow-hidden">
+    <div ref={mainRef} className="relative min-h-screen bg-ink overflow-hidden">
       <motion.div
         className="fixed inset-0 z-0"
         style={{ opacity: bgOpacity }}
       >
         <Suspense fallback={
-          <div className="w-full h-full flex items-center justify-center bg-navy">
-            <div className="text-gold text-lg font-semibold animate-pulse">
-              దేవుని మహిమ...
+          <div className="w-full h-full flex items-center justify-center bg-ink">
+            <div className="text-gold text-lg font-serif animate-pulse">
+              Glory to God
             </div>
           </div>
         }>
