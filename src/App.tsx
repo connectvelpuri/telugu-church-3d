@@ -1,5 +1,5 @@
 import { useEffect, useRef, Suspense, lazy } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -16,17 +16,8 @@ function App() {
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const intervals = [
-      { text: "Telugu Church 3D", weight: "200" },
-      { text: "React Three Fiber", weight: "200" },
-      { text: "Gaming UI", weight: "200" },
-    ];
-    let idx = 0;
     const el = document.querySelector('title');
-    const iv = setInterval(() => {
-      if (el) el.textContent = "సీయోను సంఘం | Zion Church";
-    }, 3000);
-    return () => clearInterval(iv);
+    if (el) el.textContent = "సీయోను సంఘం | Zion Church";
   }, []);
 
   return (

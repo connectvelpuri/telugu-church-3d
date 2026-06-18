@@ -1,15 +1,9 @@
 import { useRef, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
-  Float,
   Stars,
-  Environment,
   MeshDistortMaterial,
-  useTexture,
   Sparkles,
-  Text3D,
-  Center,
-  OrbitControls,
 } from "@react-three/drei";
 import * as THREE from "three";
 
